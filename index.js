@@ -27,4 +27,4 @@ app.post('/img', async (req, res) => {
   res.send(image)
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
