@@ -1,11 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const config = require('config')
 const { Image } = require('./models/image')
 
 const app = express()
 
-mongoose.connect('mongodb://localhost/gallery', { useNewUrlParser: true })
+mongoose.connect(config.get('db'), { useNewUrlParser: true })
 
 app.all('*', cors({
   allowedHeaders: ['Content-Type']
